@@ -6,28 +6,23 @@ app.views.TodoListView = Backbone.View.extend({
 		'click #add' : 'add'
 	},
 
+	//maintain a list of task views that are active
 	taskViews : [],
 
 	initialize: function(){
+		//load from localstorage upon creation
 		app.collections.todos.fetch();
 
+		//listen to the collection for items being changed and removed
 		this.listenTo( app.collections.todos, 'change', this.arrangeCards );
 		this.listenTo( app.collections.todos, 'remove', this.removeView );
 	},
 
-	//when listening to a collection the event listener gets 3 arguments: model that was changed, collection, and options passed into the create
-	render : function( task ){
+	render : function( ){
 
-		var self = this;
-
-		if( !task ){
-			app.collections.todos.forEach(
-				_.bind( this.appendTask, this )
-			);
-		}
-		else{
-			this.appendTask( task );
-		}
+		app.collections.todos.forEach(
+			_.bind( this.appendTask, this )
+		);
 	},
 
 	arrangeCards : function( ){
@@ -54,6 +49,8 @@ app.views.TodoListView = Backbone.View.extend({
 		taskView.setFocus();
 	},
 
+	//when listening to a remove event on a collection the event listener gets 2 arguments: 
+	//model that was removed and the new collection
 	removeView: function( removed ){
 
 		this.taskViews = _.filter( this.taskViews, function( view ){
