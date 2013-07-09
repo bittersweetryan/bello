@@ -28,7 +28,8 @@ app.views.TodoListView = Backbone.View.extend({
 	arrangeCards : function( ){
 		_.each( this.taskViews, function( view ){
 
-			if( view.$el.parents( 'section' ).attr( 'id' ) !== view.model.get( 'id' ) ){
+			//compare the list of the view to its list
+			if( view.$el.parents( 'section' ).attr( 'id' ) !== view.model.get( 'list' ) ){
 				view.$el.appendTo( this.$el.find( '#' + view.model.get( 'list' ) ).find( 'ol' ) );
 			}
 		}, this);
