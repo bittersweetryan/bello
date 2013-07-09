@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bello</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/foundation.css">
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+	<header>
+		<nav class="top-bar">
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="#">Bello</a></h1>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<section id="todo-list">
+		<div class="row">
+			<section class="large-4 columns" id="todo">
+				<h3>To do</h3>
+				<ol>
+				</ol>
+				<div class="create-new">
+					<a href="#" id="add">Add Item</a>
+				</div>
+			</section>
+			<section class="large-4 columns" id="doing">
+				<h3>Doing</h3>
+				<ol>
+				</ol>
+			</section>
+			<section class="large-4 columns" id="done">
+				<h3>Done</h3>
+				<ol>
+				</ol>
+			</section>
+		</div>
+	</section>
+	
+	<script type="text/template" id="list-item">
+		 <article>
+			<p class="item-description"><%= description %></p>
+			<a class="edit">edit</a>
+			<a class="remove">x</a>
+		</article>
+	</script>
+	
+	<script type="text/template" id="edit-item">
+		<article>
+			<input type="text" value="<%= description %>" placeholder="Enter item description" />
+			<select name="status" id="status">
+				<option value="todo">To do</option>
+				<option value="doing">Doing</option>
+				<option value="done">Done</option>
+			</select>
+		</article>
+	</script>
+	
+	<script src="lib/jquery-1.10.2.js"></script>
+	<script src="lib/underscore.js"></script>
+	<script src="lib/backbone.js"></script>
+	<script src="lib/backbone.localStorage.js"></script>
+	<script src="lib/custom.modernizr.js"></script>
+	<script src="lib/foundation.min.js"></script>
+	<script src="js/app.js"></script>
+	
+	<!-- Models -->
+	<script src="js/models/task.js"></script>
+	
+	<!-- Collections -->
+	<script src="js/collections/todo-collection.js"></script>
+	
+	<!-- Views -->
+	<script src="js/views/todo-list-view.js"></script>
+	<script src="js/views/task-view.js"></script>
+	
+	<!-- Router -->
+	<script src="js/routes/app-route.js"></script>
+	
+	<script>
+		$(document).foundation();
+		
+		app.start();
+	</script>
+</body>
+</html>

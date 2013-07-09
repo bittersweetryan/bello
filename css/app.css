@@ -1,0 +1,65 @@
+html, body {
+  background-color: #068;
+}
+
+.top-bar {
+  background-color: #046;
+  border-bottom: 1px solid #000;
+}
+
+h1 a{
+  font-size: 1.5em;
+}
+
+section h3 {
+  font-size: 1.1em;
+}
+
+@media only screen and (min-width: 768px){
+  #todo, #doing, #done {
+    width: 31.3%;
+    background-color: #efefef;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-right: 1.5%;
+  }
+}
+
+#todo {
+  margin-left: 1.5%;
+}
+
+@media only screen and (max-width: 767px) {
+  .content {
+    margin-top: -30px;
+  }
+
+  #todo {
+    margin-left: 0;
+  }
+  #todo, #doing, #done {
+    background-color: #efefef;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-bottom: 1px;
+  }
+}
+
+ol {
+  list-style-type: none;
+}
+
+article {
+  background-color: #fefefe;
+  border: 1px solid #068;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+article>div, .create-new a {
+  display: inline-block;
+  padding: 5px;
+  color: #068;
+  font-size: .85em;
+}
