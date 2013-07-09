@@ -1,4 +1,4 @@
-window.app = ( function( $, _, Backbone, undefined ){
+window.app = ( function( $, Backbone, undefined ){
 	return {
 		name : 'Bbello',
 		version : '0.1',
@@ -18,4 +18,4 @@ window.app = ( function( $, _, Backbone, undefined ){
 		routes : {}
 	};
 
-}( window.jQuery, window.underscore, window.Backbone ) );
+}( window.jQuery , window.Backbone ) );
