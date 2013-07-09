@@ -47,7 +47,9 @@ app.views.TaskView = Backbone.View.extend({
 	edit : function( e ){
 		//should be in render
 		this.$el.html( this.editTemplate( this.model.toJSON() ) );
-
+		
+		this.$el.find( 'option[value=' + this.model.get( 'list' ) + ']' ).attr( 'selected', 'selected' );
+		
 		this.setFocus();
 	},
 
