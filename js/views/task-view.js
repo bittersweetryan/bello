@@ -67,6 +67,6 @@ app.views.TaskView = Backbone.View.extend({
 	deleteTask : function(){
 		this.model.destroy();
 
-		this.el.remove();
+		this.remove();
 	}
 });
