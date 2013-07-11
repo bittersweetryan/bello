@@ -1,13 +1,16 @@
-window.app = ( function( $, _, Backbone, undefined ){
+window.app = ( function( $, Backbone, undefined ){
+
 	return {
-		name : 'Bbello',
+		name : 'Bello',
 		version : '0.1',
 		start : function(){
 
+			/* don't include these right away */
 			this.routes.appRoute = new this.routes.AppRoute();
 			this.collections.todos = new this.collections.Todos();
 
 			this.views.todoListView = new this.views.TodoListView();
+			/* end don't include */
 
 			Backbone.history.start();
 
@@ -18,4 +21,4 @@ window.app = ( function( $, _, Backbone, undefined ){
 		routes : {}
 	};
 
-}( window.jQuery, window.underscore, window.Backbone ) );
+}( window.jQuery, window.Backbone ) );

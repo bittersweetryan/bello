@@ -1,15 +1,10 @@
 app.routes.AppRoute = Backbone.Router.extend({
 
 	routes : {
-		''      : 'main',
-		'add'   : 'add'
+		''      : 'main'
 	},
 
 	main : function(){
 		app.views.todoListView.render();
-	},
-
-	add : function(){
-
 	}
 });
