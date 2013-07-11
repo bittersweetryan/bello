@@ -46,7 +46,6 @@
 			//should be in render
 			this.$el.html( editTemplate( this.model.toJSON() ) );
 
-			console.log( this.$el.find( 'option' ) );
 			this.$el.find( 'option[value=' + this.model.get( 'list' ) + ']' ).attr( 'selected', 'selected' );
 
 			this.setFocus();

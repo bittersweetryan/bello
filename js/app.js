@@ -1,5 +1,4 @@
 window.app = ( function( $, Backbone, undefined ){
-
 	return {
 		name : 'Bello',
 		version : '0.1',
@@ -21,4 +20,4 @@ window.app = ( function( $, Backbone, undefined ){
 		routes : {}
 	};
 
-}( window.jQuery, window.Backbone ) );
+}( window.jQuery , window.Backbone ) );
